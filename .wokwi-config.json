@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "author": "Nishanth Pechimuthu",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-v1",
+      "id": "esp",
+      "top": 0,
+      "left": 0
+    },
+    {
+      "type": "sensor-mpu6050",
+      "id": "mpu",
+      "top": -80,
+      "left": 200,
+      "attrs": { "sda": "21", "scl": "22" }
+    },
+    {
+      "type": "potentiometer",
+      "id": "pot",
+      "top": 80,
+      "left": 250,
+      "attrs": { "pin": "34" }
+    },
+    {
+      "type": "pushbutton",
+      "id": "button",
+      "top": 180,
+      "left": 250,
+      "attrs": { "pin": "4" }
+    },
+    {
+      "type": "led",
+      "id": "led",
+      "top": 280,
+      "left": 250,
+      "attrs": { "pin": "2" }
+    }
+  ],
+  "connections": [
+    [ "esp:21", "mpu:SDA" ],
+    [ "esp:22", "mpu:SCL" ],
+    [ "pot:SIG", "esp:34" ],
+    [ "button:1", "esp:4" ],
+    [ "led:ANODE", "esp:2" ]
+  ]
+}
